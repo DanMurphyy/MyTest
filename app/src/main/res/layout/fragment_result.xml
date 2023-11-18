@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.result.ResultFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/result_appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/result_top_app_bar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:buttonGravity="center_vertical"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@drawable/ic_back_press"
+            app:title="@string/order"
+            app:titleTextColor="@color/black">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/paid_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_appBarLayout"
+        app:layout_constraintVertical_bias="0.35">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/background_confirm"
+            android:layout_marginBottom="25dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/paid_image"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_margin="25dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/ic_party"
+                tools:ignore="ImageContrastCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_order_confirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_order_was_received"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/txt_order_confirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="@string/order_confirmation_details"
+            android:textAlignment="center"
+            android:textColor="#546E7A"
+            android:textSize="16sp"
+            tools:ignore="VisualLintLongText" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paid_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/btn_super"
+        android:textColor="@color/white"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

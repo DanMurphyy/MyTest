@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/room_container_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="10dp"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/room_imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_corner_radius="35"
+            app:iss_delay="0"
+            app:iss_error_image="@android:color/darker_gray"
+            app:iss_period="3000"
+            app:iss_placeholder="@android:color/darker_gray"
+            app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_imageSlider"
+            tools:text="Стандартный с видом на бассейн или сад" />
+
+        <LinearLayout
+            android:id="@+id/room_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_name">
+
+            <TextView
+                android:id="@+id/room_peculiarities_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:textColor="#607D8B"
+                android:textStyle="bold"
+                tools:text="@string/all_inclusive" />
+
+            <TextView
+                android:id="@+id/room_peculiarities_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#607D8B"
+                android:textStyle="bold"
+                tools:text="@string/air_conditioning" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/room_info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_light"
+            android:drawableEnd="@drawable/ic_next"
+            android:text="@string/about_room"
+            android:textAllCaps="false"
+            android:textColor="#3949AB"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_linear_layout" />
+
+        <LinearLayout
+            android:id="@+id/room_linear_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_info_button">
+
+
+            <TextView
+                android:id="@+id/hotel_minimalPriceFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/from"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/room_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:text="134 673" />
+
+            <TextView
+                android:id="@+id/hotel_minimalCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/currency"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/room_pricePer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#607D8B"
+                android:textStyle="bold"
+                tools:text="за 7 ночей с перелётом" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_room"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/select_the_room"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_linear_layout_2"
+            tools:ignore="VisualLintButtonSize" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

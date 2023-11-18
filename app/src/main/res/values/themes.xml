@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TestAppHotelBooking" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="Theme.TestAppHotelBooking" parent="Base.Theme.TestAppHotelBooking" />
+
+    <style name="title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#0D72FF</item>
+    </style>
+
+    <style name="booking_rating_textView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="linearLayout_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="linearLayout_horizontal_booking">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="booking_details">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="booking_details_2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="info_hotel_textView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="info_booking_textView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RoundedTextInputLayout"
+        parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="hintTextColor">@color/gray_light</item>
+    </style>
+</resources>

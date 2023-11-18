@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hotel_info_card_about_hotel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:backgroundTint="@android:color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_tourist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/touristNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Первый турист "
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/add_btn"
+                    app:layout_constraintHorizontal_bias="0.464"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/shape_button_rounded"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/background_pay_btn"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/touristNumber"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/touristNumber">
+
+                    <ImageView
+                        android:id="@+id/arrow_down_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_arrow_down"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <ImageView
+                        android:id="@+id/arrow_up_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_arrow_up"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_tourist_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/touristNumber">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/gray">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container"
+                                    android:hint="@string/name"
+                                    android:inputType="textPersonName"
+                                    android:textColorHint="@color/gray" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/background_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutSurname"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_surname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/surname"
+                                    android:inputType="textPersonName"
+                                    android:textColorHint="@color/gray"
+                                    tools:ignore="VisualLintTextFieldSize">
+
+                                </com.google.android.material.textfield.TextInputEditText>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/background_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutDob"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_dob"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/dob"
+                                    android:inputType="date"
+                                    android:textColorHint="@color/gray"
+                                    tools:ignore="VisualLintTextFieldSize">
+
+                                </com.google.android.material.textfield.TextInputEditText>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/background_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutNationality"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp">
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/spinnerNationality"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:background="@color/background_container"
+                                    android:entries="@array/nationalities"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/nationality"
+                                    android:spinnerMode="dialog"
+                                    android:textColorHint="@color/gray" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/background_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutPasNumber"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_pasNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/number_passport"
+                                    android:inputType="text"
+                                    android:textColorHint="@color/gray"
+                                    tools:ignore="VisualLintTextFieldSize">
+
+                                </com.google.android.material.textfield.TextInputEditText>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/background_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textInputLayoutValid"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_valid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/validity_period"
+                                    android:inputType="date"
+                                    android:textColorHint="@color/gray"
+                                    tools:ignore="VisualLintTextFieldSize">
+
+                                </com.google.android.material.textfield.TextInputEditText>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</LinearLayout>

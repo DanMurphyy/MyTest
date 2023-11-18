@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#CDCDCD</color>
+    <color name="light_gray">#E9EBEF</color>
+    <color name="card_back">#A9ABB7</color>
+    <color name="orange">#FFA800</color>
+    <color name="orange_light">#33FFA800</color>
+    <color name="blue">#0D72FF</color>
+    <color name="blue_light">#1A0D72FF</color>
+    <color name="gray_light">#828796</color>
+    <color name="background_container">#33FBFBFC</color>
+</resources>

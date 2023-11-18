@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.booking.BookingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:buttonGravity="center_vertical"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@drawable/ic_back_press"
+            app:title="@string/booking"
+            app:titleTextColor="@color/black">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_room"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/itemErrorMessage"
+                    layout="@layout/item_error_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:visibility="gone"
+                    app:layout_anchor="@+id/nestedScrollView"
+                    app:layout_anchorGravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/ll_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/hotel_info_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="10dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:backgroundTint="@color/orange_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="2dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="8dp"
+                                        android:contentDescription="@string/image"
+                                        android:src="@drawable/ic_start"
+                                        tools:ignore="TooDeepLayout,ImageContrastCheck" />
+
+                                    <TextView
+                                        android:id="@+id/hotel_info_rating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="8dp"
+                                        android:textColor="#BF360C"
+                                        android:textSize="16sp"
+                                        tools:text="5" />
+
+                                    <TextView
+                                        android:id="@+id/hotel_info_rating_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="8dp"
+                                        android:textColor="#BF360C"
+                                        android:textSize="16sp"
+                                        tools:text="@string/perfect" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:id="@+id/hotel_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/card_rating"
+                                tools:text="@string/hotel" />
+
+                            <TextView
+                                android:id="@+id/hotel_info_adress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:textColor="#2962FF"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotel_name"
+                                tools:text="Hotel" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/stay_info_card_about_hotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/white"
+                        android:padding="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="10dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/stay_info_linear_layout_main"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="15dp"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_1"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_departure_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Вылет из"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/booking_departure"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:text="Санкт-Петербург" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_2"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_arrival_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Страна, город"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/booking_arrival"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:text="Египет, Хургада" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_3"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_date_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Даты"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_date_start"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="19.09.2023" />
+
+                                        <TextView
+                                            android:id="@+id/booking_date_minus"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            android:text="–" />
+
+                                        <TextView
+                                            android:id="@+id/booking_date_stop"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text=" 27.09.2023" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_4"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_nights_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Кол-во ночей"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_nights"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="5dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="7" />
+
+                                        <TextView
+                                            android:id="@+id/booking_nights_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="ночей"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_5"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_hotel_name_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="@string/hotel"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/booking_hotel_name"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:text="@string/hotel" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_6"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_room_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Номер"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/booking_room"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:text="Стандартный с видом на бассейн или сад" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_stay_infolinear_layout_7"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_nutrition_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Питание"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/booking_nutrition"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:text="Все включено" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/hotel_info_card_about_hotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/white"
+                        android:padding="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="10dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/touristNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Информация о покупателе"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/hotel_info_linear_layout_main"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/touristNumber">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/gray">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:baselineAligned="false"
+                                        android:orientation="horizontal"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/textInputLayout_phone_number"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1">
+
+                                            <com.github.reinaldoarrosi.maskededittext.MaskedEditText
+                                                android:id="@+id/ed_phone_number"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="50dp"
+                                                android:paddingStart="15dp"
+                                                android:background="@color/background_container"
+                                                android:ems="10"
+                                                android:textColorHint="@color/gray"
+                                                android:inputType="number"
+                                                app:mask="+7(999) 999-99-99"
+                                                app:placeholder="*" />
+
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/background_container">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:baselineAligned="false"
+                                        android:orientation="horizontal"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/emailInputLayout"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/ed_email"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@color/background_container"
+                                                android:hint="@string/email"
+                                                android:inputType="textEmailAddress"
+                                                android:textColorHint="@color/gray"
+                                                tools:ignore="VisualLintTextFieldSize">
+
+                                            </com.google.android.material.textfield.TextInputEditText>
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/hotel_info_description"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:text="@string/warning"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotel_info_linear_layout_main" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/hotel_info_extras_container"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:backgroundTint="@color/light_gray"
+                                app:cardCornerRadius="15dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/hotel_info_description"
+                                app:strokeWidth="0dp">
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <include
+                        android:id="@+id/included_tourist_layout"
+                        layout="@layout/tourist_layout"
+                        tools:listitem="@layout/tourist_layout" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/add_info_card_about_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/white"
+                        android:padding="10dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_add_tourist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:paddingEnd="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/add_tourist_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Добавить туриста"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/add_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:background="@drawable/border_shape_button_rounded"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="@drawable/background_pay_btn">
+
+                                <ImageView
+                                    android:id="@+id/add_btn_image"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/ic_add"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/price_info_card_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/white"
+                        android:padding="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="10dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/price_info_linear_layout_main"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="15dp"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:id="@+id/booking_rate_info_linear_layout_1"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_rate_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Тур"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="end"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_tour_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="5dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="186 600" />
+
+                                        <TextView
+                                            android:id="@+id/booking_tour_price_currency"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/currency"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_rate_infolinear_layout_2"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_fuel_charge_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Топливный сбор"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="end"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_fuel_charge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="5dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="9 300 " />
+
+                                        <TextView
+                                            android:id="@+id/booking_fuel_charge_currency"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/currency"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_rate_info_linear_layout_3"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:id="@+id/booking_service_charge_info"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="Сервисный сбор"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="end"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_service_charge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="5dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="2 136" />
+
+                                        <TextView
+                                            android:id="@+id/booking_service_charge_currency"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/currency"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/booking_rate_infolinear_layout_4"
+                                    style="@style/linearLayout_horizontal_booking">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text="К оплате"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="end"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/booking_final_rate"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="5dp"
+                                            android:textColor="@color/blue"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="198 036" />
+
+                                        <TextView
+                                            android:id="@+id/booking_final_rate_currency"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/currency"
+                                            android:textColor="@color/blue"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/border_shape_button_rounded"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/background_pay_btn">
+
+                        <LinearLayout
+                            android:id="@+id/btn_pay_booking"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:text="@string/pay"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/total_btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="5dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    tools:text="198 036" />
+
+                                <TextView
+                                    android:id="@+id/total_btn_currency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/currency"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

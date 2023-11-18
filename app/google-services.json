@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "178955261828",
+    "project_id": "testapphotelbooking",
+    "storage_bucket": "testapphotelbooking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178955261828:android:75d772c683dc8fc0aa6fd1",
+        "android_client_info": {
+          "package_name": "com.danmurphyy.testapphotelbooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADA8wl-1TQN4FcXlpEhoQFIn3WgiASw10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

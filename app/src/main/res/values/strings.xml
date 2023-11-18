@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">TestAppHotelBooking</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="to_select_room">К выбору номера</string>
+    <string name="booking">Бронирование</string>
+    <string name="departure_from">Вылет из</string>
+    <string name="city_country">Страна, город</string>
+    <string name="date">Даты</string>
+    <string name="number_of_nights">Кол-во ночей</string>
+    <string name="hotel">Отель</string>
+    <string name="hotel_room">Номер</string>
+    <string name="feed">Питание</string>
+    <string name="warning">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
+    <string name="first_tourist">Первый турист</string>
+    <string name="tourist">турист</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="dob">Дата рождения</string>
+    <string name="nationality">Гражданство</string>
+    <string name="number_passport">Номер загранпаспорта</string>
+    <string name="validity_period">Срок действия загранпаспорта</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_collection">Топливный сбор</string>
+    <string name="service_fee">Сервисный сбор</string>
+    <string name="to_pay">К оплате</string>
+    <string name="facilities">Удобства</string>
+    <string name="whats_included">Что включено</string>
+    <string name="whats_not_included">Что не включено</string>
+    <string name="essentials">Самое необходимое</string>
+    <string name="your_order_was_received">Ваш заказ принят в работу</string>
+    <string name="order_confirmation_details">Подтверждение заказа №104895 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+    <string name="error_input_name">Неверное имя</string>
+    <string name="error_input_surname">Неверная фамилия</string>
+    <string name="error_input_dateOfBirth">Неверная дата рождения</string>
+    <string name="error_input_citizenship">Недействительное гражданство</string>
+    <string name="error_input_numberPassport">Неверный номер паспорта</string>
+    <string name="error_input_validityPeriod">Неверный период действия</string>
+    <string name="error_input_email">Неверный адрес электронной почты</string>
+    <string name="error_input_phone_number">Неверный номер телефона</string>
+    <string name="order">Заказ оплачен</string>
+    <string name="image">изображение</string>
+    <string name="about_hotel">Об отеле</string>
+    <string name="about_room">Подробнее о номере</string>
+    <string name="select_the_room">Выбрать номер</string>
+    <string name="all_inclusive">Все включено</string>
+    <string name="air_conditioning">Кондиционер</string>
+    <string name="btn_super">Супер!</string>
+    <string name="failed_to_connect">Не удалось подключиться к Интернету</string>
+    <string name="retry">Повторить</string>
+    <string name="from">от</string>
+    <string name="currency">₽</string>
+    <string name="perfect">Превосходно</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="country_code">+7</string>
+    <string name="email">Почта</string>
+    <string name="pay">Оплатить</string>
+    <string name="fill_all_fields">Пожалуйста, заполните все поля</string>
+
+    <string-array name="nationalities">
+        <item>Гражданство</item>
+        <item>Country 1</item>
+        <item>Country 2</item>
+    </string-array>
+</resources>
